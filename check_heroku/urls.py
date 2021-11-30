@@ -5,6 +5,6 @@ from django.urls.conf import include
 from .views import *
 
 urlpatterns = [
-    path('', index)
+    path('', Home.as_view(), name='home'),
     
 ]
