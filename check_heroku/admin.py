@@ -3,9 +3,8 @@ from django.contrib import admin
 from .models import *
 
 
-# class PostAdmin(admin.ModelAdmin):
-#     list_display = ('id', 'title', 'slug', 'content')
-#     fields = ('title', 'slug', 'content', 'created_at', )
+class PostAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug":("title",)} # autocomplete slug
+    save_on_top = True # duplicate save button on top
 
-# admin.site.register(Post, PostAdmin)
-admin.site.register(Post)
+admin.site.register(Post, PostAdmin)

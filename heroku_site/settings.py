@@ -77,8 +77,14 @@ WSGI_APPLICATION = 'heroku_site.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd1l8ce207toi25',
+        'USER': 'terpxwbfygznem', 
+        'PASSWORD': '6000da740d7dad30439001ea4de7401fc460028011434be7a50fa4d72eb0a512',
+        'HOST': 'ec2-54-235-45-88.compute-1.amazonaws.com', 
+        'PORT': '5432',
+        # 'URI': 'postgres://terpxwbfygznem:6000da740d7dad30439001ea4de7401fc460028011434be7a50fa4d72eb0a512@ec2-54-235-45-88.compute-1.amazonaws.com:5432/d1l8ce207toi25',
+        # 'Heroku CLI': 'heroku pg:psql postgresql-contoured-55390 --app ancient-gorge-15860',
     }
 }
 
