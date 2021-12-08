@@ -21,13 +21,13 @@
 <body>
     <div class="wrapper">
         <!--  -->
-        <!--  -->
+        {% include 'inc/_header.html' %}
         <!--  -->
 
         {% block content %} {% endblock content %}
 
         <!--  -->
-        <!--  -->
+        {% include 'inc/_footer.html' %}
         <!--  -->
     </div>
     <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
