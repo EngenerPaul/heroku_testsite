@@ -19,7 +19,7 @@ class Home(ListView):
     
 
 class PostsByCategory(ListView):
-    template_name = 'blog/index.html'
+    template_name = 'check_heroku/index.html'
     context_object_name = 'posts'
     paginate_by = 2
     allow_empty = False
@@ -34,7 +34,7 @@ class PostsByCategory(ListView):
 
 
 class PostByTag(ListView):
-    template_name = 'blog/index.html'
+    template_name = 'check_heroku/index.html'
     context_object_name = 'posts'
     paginate_by = 2
     allow_empty = False
@@ -49,7 +49,7 @@ class PostByTag(ListView):
 
 class GetPost(DetailView):
     model = Post
-    template_name = 'blog/single.html'
+    template_name = 'check_heroku/single.html'
     context_object_name = 'post'
 
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -60,7 +60,7 @@ class GetPost(DetailView):
         return context
 
 class Search(ListView):
-    template_name = 'blog/search.html'
+    template_name = 'check_heroku/search.html'
     context_object_name = 'posts'
     paginate_by = 1
 
