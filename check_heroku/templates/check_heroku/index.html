@@ -39,13 +39,14 @@
                 {% for post in posts %}
                 <div class="col-md-3">
                     <div class="single-post">
-                        <!--  -->
-                        <!--  -->
-                        <!--  -->
+                        {% if post.photo %}
+                        <img src="{{ post.photo.url }}" alt="{{ post.title }}">
+                        {% else %}
                         <img src="https://picsum.photos/id/1060/300/201/?blur=2" alt="{{ post.title }}">
-                        <!--  -->
+                        {% endif %}
                         <h3><a href="{{ post.get_absolute_url }}"> {{ post.title }} </a></h3>
-                        <!--  -->
+                        <h4><span>Posted By: <span class="author-name">{{ post.author }}</span></span>
+                        </h4>
                         {{ post.content|truncatewords_html:20|safe }}
                         <h4><span>{{ post.created_at|date:"d E Y" }}</span></h4>
                     </div>
