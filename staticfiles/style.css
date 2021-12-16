@@ -93,22 +93,23 @@
 /*.wrapper section.bg-text-area .container {}*/
 
 .wrapper section.bg-text-area .bg-text h3 {
-    color: #fff;
+    color: #fcf8e3;
     font-family: Geometria;
     font-size: 50px;
     font-weight: 700;
     text-align: center;
     text-transform: uppercase;
     margin: 0;
+    margin-bottom: 37px;
 }
 
 .wrapper section.bg-text-area .bg-text p {
-    color: #fff;
+    color: #fdf5c9;
     font-family: Geometria;
     font-size: 15px;
     font-weight: 500;
     line-height: 33px;
-    margin: 32px 0 0;
+    margin: 10px 0 0;
     text-align: center;
 }
 
@@ -639,6 +640,7 @@ section.blog-post-area h4 span.author-name {
 /*comment part end*/
 .grid .portfolio-item {
     margin-bottom: 30px;
+    padding-bottom: 10px;
 }
 .grid .portfolio-item img {
     float: left;

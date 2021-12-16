@@ -10,7 +10,7 @@ class Home(ListView):
     model = Post
     template_name = 'check_heroku/index.html'
     context_object_name = 'posts'
-    paginate_by = 2
+    paginate_by = 4
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -21,7 +21,7 @@ class Home(ListView):
 class PostsByCategory(ListView):
     template_name = 'check_heroku/index.html'
     context_object_name = 'posts'
-    paginate_by = 2
+    paginate_by = 4
     allow_empty = False
 
     def get_queryset(self):
@@ -36,7 +36,7 @@ class PostsByCategory(ListView):
 class PostByTag(ListView):
     template_name = 'check_heroku/index.html'
     context_object_name = 'posts'
-    paginate_by = 2
+    paginate_by = 4
     allow_empty = False
 
     def get_queryset(self):
@@ -62,7 +62,7 @@ class GetPost(DetailView):
 class Search(ListView):
     template_name = 'check_heroku/search.html'
     context_object_name = 'posts'
-    paginate_by = 1
+    paginate_by = 4
 
     def get_queryset(self):
         return Post.objects.filter(title__icontains=self.request.GET.get('s'))

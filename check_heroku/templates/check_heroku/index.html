@@ -9,8 +9,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="bg-text">
-                    <h3>Classic BLOG Design</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla </p>
+                    <h3>Photographer Blog</h3>
+                    <p>Hello. I'm Carolyn Crawford and i'm a photographer.</p>
+                    <p>This is my blog about my work and travel. In the course of my work I travel all over the world. Over the years, I have made sure that even in the most remote corners of the planet, you can find and capture amazing landscapes or events. Here I post my favorite works. I invite you to join me.</p>
                 </div>
             </div>
         </div>
@@ -40,7 +41,7 @@
                 <div class="col-md-3">
                     <div class="single-post">
                         {% if post.photo %}
-                        <img src="{{ post.photo.url }}" alt="{{ post.title }}">
+                        <img src="{{ post.photo }}" alt="{{ post.title }}">
                         {% else %}
                         <img src="https://picsum.photos/id/1060/300/201/?blur=2" alt="{{ post.title }}">
                         {% endif %}
