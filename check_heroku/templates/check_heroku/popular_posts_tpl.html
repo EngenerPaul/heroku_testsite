@@ -9,7 +9,7 @@
         {% endif %}
         <div class="portfolio-text">
             <h5><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h5>
-            <p>By {{ post.author }} <span>|</span>{{ post.created_at|date:"d E Y" }}</p>
+            <p>By {{ post.author }} <span>|</span>{{ post.created_at|date:"d E Y" }}<br>Views: {{ post.views }}</p>
         </div>
     </div>
     {% endfor %}

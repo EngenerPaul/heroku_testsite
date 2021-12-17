@@ -11,7 +11,7 @@
                 <div class="bg-text">
                     <h3>Photographer Blog</h3>
                     <p>Hello. I'm Carolyn Crawford and i'm a photographer.</p>
-                    <p>This is my blog about my work and travel. In the course of my work I travel all over the world. Over the years, I have made sure that even in the most remote corners of the planet, you can find and capture amazing landscapes or events. Here I post my favorite works. I invite you to join me.</p>
+                    <p>This is my blog about my work and travel. In the course of my work I travel all over the world. Over the years, I have made sure that even in the most remote corners of the planet, you can find and capture amazing landscapes or events. Here I talk about my favorite places and show you pictures of them. I invite you to join me.</p>
                 </div>
             </div>
         </div>
@@ -25,13 +25,12 @@
                 <div class="col-md-12">
                     <div class="single-post-big">
                         <div class="big-image">
-                            <img src="https://picsum.photos/id/1060/300/201/?blur=2" alt="">
+                            <img src="{{ popular_post.photo }}" alt="{{ popular_post.title }}" height='400'>
                         </div>
                         <div class="big-text">
-                            <h3><a href="#">Post Title Goes Here.</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                            <h4><span class="date">25 February 2017</span><span class="author">Posted By: <span class="author-name">Kabbo Liate</span></span>
+                            <h3><a href="{{ popular_post.get_absolute_url }}">{{ popular_post.title }}</a></h3>
+                            <p>{{ popular_post.content|truncatewords_html:20|safe }}</p>
+                            <h4><span class="date">{{ popular_post.created_at|date:"d E Y" }}</span><span class="author">Posted By: <span class="author-name">{{ popular_post.author }}</span></span>
                             </h4>
                         </div>
                     </div>

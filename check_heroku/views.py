@@ -4,7 +4,7 @@ from django.views.generic import ListView, DetailView
 from django.db.models import F
 
 from .models import Post, Tag, Category
-
+from django.core.paginator import Paginator
 
 class Home(ListView):
     model = Post
@@ -15,6 +15,7 @@ class Home(ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Classic Blog Design'
+        context['popular_post'] = Post.objects.order_by('-views')[0]
         return context
     
 

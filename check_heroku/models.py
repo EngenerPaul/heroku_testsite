@@ -50,7 +50,7 @@ class Post(models.Model):
     class Meta:
         verbose_name = 'Article'
         verbose_name_plural = 'Articles'
-        ordering = ['created_at']
+        ordering = ['-created_at']
 
     def get_absolute_url(self):
         return reverse('post', kwargs={'slug':self.slug})
