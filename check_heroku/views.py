@@ -1,10 +1,11 @@
-# from django.shortcuts import render
-# from django.http import HttpResponse
 from django.views.generic import ListView, DetailView
+from django.views.generic.edit import FormMixin
 from django.db.models import F
+from django.urls import reverse_lazy
 
-from .models import Post, Tag, Category
-from django.core.paginator import Paginator
+from .models import Post, Tag, Category, Comments
+from .forms import NewComment
+
 
 class Home(ListView):
     model = Post
@@ -48,16 +49,40 @@ class PostByTag(ListView):
         context['title'] = 'Posts by tag' + str(Tag.objects.get(slug=self.kwargs['slug']))
         return context
 
-class GetPost(DetailView):
+class GetPost(DetailView, FormMixin):
     model = Post
     template_name = 'check_heroku/single.html'
     context_object_name = 'post'
+
+    form_class = NewComment
+
+    # needed for writing form post
+    def post(self, request, *args, **kwargs):
+        form = self.get_form()
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+
+    # needed for save form
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.post = self.get_object()
+        # If we use registration, then...
+        # self.object.user = self.request.user
+        self.object.save()
+        return super().form_valid(form)
+    
+    # needed for updating page after save form
+    def get_success_url(self, **kwargs):
+        return reverse_lazy('post', kwargs={'slug':self.get_object().slug})
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         self.object.views = F('views') + 1
         self.object.save()
         self.object.refresh_from_db()
+        context['comments'] = self.object.comments.all() # print comments
         return context
 
 class Search(ListView):

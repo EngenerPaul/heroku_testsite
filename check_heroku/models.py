@@ -54,3 +54,19 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('post', kwargs={'slug':self.slug})
+
+class Comments(models.Model):
+    name = models.CharField(max_length=50)
+    date = models.DateTimeField(auto_now_add=True)
+    comment = models.TextField()
+    likes = models.IntegerField(default=0)
+    links = models.IntegerField(default=0)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Comment'
+        verbose_name_plural = 'Comments'
+        ordering = ['-date']

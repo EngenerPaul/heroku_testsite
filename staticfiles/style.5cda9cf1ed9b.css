@@ -1,30 +1,30 @@
 @font-face {
     font-family: Geometria;
-    src: url(geometria_font/Geometria.ttf);
+    src: url("geometria_font/Geometria.b02f51fd9ead.ttf");
     font-weight: 300;
 }
 
 @font-face {
     font-family: Geometria;
-    src: url(geometria_font/Geometria-Bold.ttf);
+    src: url("geometria_font/Geometria-Bold.ffbd3029eb6b.ttf");
     font-weight: 700;
 }
 
 @font-face {
     font-family: Geometria;
-    src: url(geometria_font/Geometria-ExtraBold.ttf);
+    src: url("geometria_font/Geometria-ExtraBold.df620eac2662.ttf");
     font-weight: 800;
 }
 
 @font-face {
     font-family: Geometria;
-    src: url(geometria_font/geometria-light.ttf);
+    src: url("geometria_font/geometria-light.afb855a62b40.ttf");
     font-weight: 400;
 }
 
 @font-face {
     font-family: Geometria;
-    src: url(geometria_font/geometria-medium.ttf);
+    src: url("geometria_font/geometria-medium.8174097c95a8.ttf");
     font-weight: 500;
 }
 
@@ -85,7 +85,7 @@
 }
 
 .wrapper section.bg-text-area .bg-text {
-    background-image: url(img/bg-image.jpg);
+    background-image: url("img/bg-image.d20ed121e700.jpg");
     background-size: 100% 100%;
     padding: 205px 280px;
 }
