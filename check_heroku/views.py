@@ -74,8 +74,6 @@ class GetPost(DetailView, FormMixin):
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.post = self.get_object()
-        # If we use registration, then...
-        # self.object.user = self.request.user
         self.object.save()
         return super().form_valid(form)
     

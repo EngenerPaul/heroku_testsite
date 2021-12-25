@@ -3,6 +3,10 @@
 
 {% block title %} {{ title }} :: {{ block.super }} {% endblock title %}
 
+{% block about_me %}
+{% include 'inc/_about_me.html' %}
+{% endblock about_me %}
+
 {% block content %}
 <section class="bg-text-area">
     <div class="container">

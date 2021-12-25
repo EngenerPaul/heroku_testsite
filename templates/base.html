@@ -21,6 +21,9 @@
 
 <body>
     <div class="wrapper">
+        
+        {% block about_me %}{% endblock about_me %}
+
         {% cache 3600 header %}
         {% include 'inc/_header.html' %}
         {% endcache %}
