@@ -2,8 +2,9 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import FormMixin
 from django.db.models import F
 from django.urls import reverse_lazy
+from django.core.cache import cache
 
-from .models import Post, Tag, Category, Comments
+from .models import Post, Tag, Category
 from .forms import NewComment
 
 
@@ -16,12 +17,17 @@ class Home(ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Classic Blog Design'
-        context['popular_post'] = Post.objects.order_by('-views')[0]
+
+        context['popular_post'] = cache.get('popular_post')
+        if not context['popular_post']:
+            context['popular_post'] = Post.objects.order_by('-views')[0]
+            cache.set('popular_post', context['popular_post'], 60*30)
+        
         return context
     
 
 class PostsByCategory(ListView):
-    template_name = 'check_heroku/index.html'
+    template_name = 'check_heroku/category.html'
     context_object_name = 'posts'
     paginate_by = 4
     allow_empty = False

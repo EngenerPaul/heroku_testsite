@@ -87,7 +87,7 @@
 .wrapper section.bg-text-area .bg-text {
     background-image: url(img/bg-image.jpg);
     background-size: 100% 100%;
-    padding: 205px 280px;
+    padding: 205px 260px;
 }
 
 /*.wrapper section.bg-text-area .container {}*/
@@ -587,7 +587,6 @@ section.blog-post-area h4 span.author-name {
 .single-blog-area form input[placeholder] {
     color: #000;
     font-family: Geometria;
-    font-size: 16px;
     font-weight: 500;
 }
 .single-blog-area form .name {

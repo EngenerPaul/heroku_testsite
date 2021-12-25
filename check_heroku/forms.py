@@ -18,6 +18,7 @@ class NewComment(forms.ModelForm):
             'comment':forms.Textarea(attrs={
                 'class': 'form-control', 
                 'rows': 5,
-                })
+                'placeholder': 'Attention! You will not be able to delete your comment'
+            })
         }
 
