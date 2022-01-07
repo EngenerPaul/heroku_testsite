@@ -86,15 +86,27 @@ WSGI_APPLICATION = 'heroku_site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd1l8ce207toi25',
-        'USER': 'terpxwbfygznem', 
-        'PASSWORD': '6000da740d7dad30439001ea4de7401fc460028011434be7a50fa4d72eb0a512',
-        'HOST': 'ec2-54-235-45-88.compute-1.amazonaws.com', 
+        'NAME': 'd2qb8j6e89sqfj',
+        'USER': 'bzdqqttbqvbbnk', 
+        'PASSWORD': '1f40b7f16b1f121a46d9c1a26a5cdf3b4bdf5211bcedb3807594e601bbdff1a9',
+        'HOST': 'ec2-3-227-55-25.compute-1.amazonaws.com', 
         'PORT': '5432',
         # 'URI': 'postgres://terpxwbfygznem:6000da740d7dad30439001ea4de7401fc460028011434be7a50fa4d72eb0a512@ec2-54-235-45-88.compute-1.amazonaws.com:5432/d1l8ce207toi25',
         # 'Heroku CLI': 'heroku pg:psql postgresql-contoured-55390 --app ancient-gorge-15860',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'd1l8ce207toi25',
+#         'USER': 'terpxwbfygznem', 
+#         'PASSWORD': '6000da740d7dad30439001ea4de7401fc460028011434be7a50fa4d72eb0a512',
+#         'HOST': 'ec2-54-235-45-88.compute-1.amazonaws.com', 
+#         'PORT': '5432',
+#         # 'URI': 'postgres://terpxwbfygznem:6000da740d7dad30439001ea4de7401fc460028011434be7a50fa4d72eb0a512@ec2-54-235-45-88.compute-1.amazonaws.com:5432/d1l8ce207toi25',
+#         # 'Heroku CLI': 'heroku pg:psql postgresql-contoured-55390 --app ancient-gorge-15860',
+#     }
+# }
 
 
 # Password validation
