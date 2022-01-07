@@ -28,7 +28,7 @@
             <div class="blog-post-area-style">
                 <div class="col-md-12">
                     <div class="single-post-big">
-                        <div class="big-image">
+                        <div class="big-image" style="overflow: hidden;">
                             <img src="{{ popular_post.photo }}" alt="{{ popular_post.title }}" height='400'>
                         </div>
                         <div class="big-text">
@@ -42,9 +42,9 @@
 
                 {% for post in posts %}
                 <div class="col-md-3">
-                    <div class="single-post">
+                    <div class="single-post" style="overflow: hidden;">
                         {% if post.photo %}
-                        <img src="{{ post.photo }}" alt="{{ post.title }}" height='200'>
+                        <img src="{{ post.photo }}" alt="{{ post.title }}" height='200' width=auto>
                         {% else %}
                         <img src="https://picsum.photos/id/1060/300/201/?blur=2" alt="{{ post.title }}">
                         {% endif %}
