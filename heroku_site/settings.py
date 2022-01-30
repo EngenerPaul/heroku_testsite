@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 import django_heroku
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-yhvtkyg@w_f!yz_-fq!$t-(tvyfdp=6&wd_t-t+_t%hm6^i1gc'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -86,10 +90,10 @@ WSGI_APPLICATION = 'heroku_site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd2qb8j6e89sqfj',
-        'USER': 'bzdqqttbqvbbnk', 
-        'PASSWORD': '1f40b7f16b1f121a46d9c1a26a5cdf3b4bdf5211bcedb3807594e601bbdff1a9',
-        'HOST': 'ec2-3-227-55-25.compute-1.amazonaws.com', 
+        'NAME': env('DATABASE_NAME'),
+        'USER': env('DATABASE_USER'), 
+        'PASSWORD': env('DATABASE_PASS'),
+        'HOST': env('DATABASE_HOST'), 
         'PORT': '5432',
         # 'URI': 'postgres://terpxwbfygznem:6000da740d7dad30439001ea4de7401fc460028011434be7a50fa4d72eb0a512@ec2-54-235-45-88.compute-1.amazonaws.com:5432/d1l8ce207toi25',
         # 'Heroku CLI': 'heroku pg:psql postgresql-contoured-55390 --app ancient-gorge-15860',

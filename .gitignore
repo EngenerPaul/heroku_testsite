@@ -2,3 +2,4 @@ django_cache/
 __pychache__/
 *.pyc
 db.sqlite3
+.env
